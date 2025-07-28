@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0f;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+/* Logo com Gradiente Base */
+.logo {
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #00b3ff, #9b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Header */
+.main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  background-color: rgba(10, 10, 15, 0.5);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: #9b00ff;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-menu a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #9b00ff;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #050a12, #162033 30%, #050a12);
+  height: 100vh;
+  padding: 6rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.6rem;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00b3ff, #9b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* BOTÕES RETANGULARES COM PONTAS ARREDONDADAS */
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px; /* ← alterado aqui */
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn.filled {
+  background: linear-gradient(135deg, #00b3ff, #9b00ff);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 10px #9b00ff88;
+}
+
+.btn.filled:hover {
+  transform: scale(1.05);
+}
+
+.btn.outlined {
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #00b3ff, #9b00ff) 1;
+  color: #fff;
+  background: transparent;
+}
+
+.btn.outlined:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: scale(1.05);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #888;
+  animation: bounce 2s infinite;
+  opacity: 0.8;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* Restante do CSS permanece como no seu original... */
+
+/* Seção de serviços */
+.services {
+  background: linear-gradient(135deg, #050a12 0%, #0d111a 40%, #0d111a 60%, #050a12 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.services-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #bbb;
+  margin-top: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid de cards */
+.services-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.service-card {
+  background-color: #0c0c12;
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #00b3ff, #9b00ff) 1;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  color: #fff;
+  width: 250px; /* largura fixa que permite layout horizontal */
+  box-shadow: 0 0 20px rgba(155, 0, 255, 0.08);
+  transition: box-shadow 0.3s, transform 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #9b00ff;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(155, 0, 255, 0.2);
+}
+
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #bbb;
+  line-height: 1.4;
+  margin-top: 0.3rem;
+}
+
+/* PORTFÓLIO COMPLETO */
+
+.portfolio {
+  background: linear-gradient(135deg, #050a12 0%, #0d111a 40%, #0d111a 60%, #050a12 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.portfolio-header {
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title.gradient-text {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #00b3ff, #9b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+}
+
+.section-subtitle {
+  color: #ccc;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Carrossel e estrutura */
+
+.portfolio-carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  position: relative;
+  width: 100%;
+}
+
+.portfolio-carousel-3d {
+  position: relative;
+  width: 320px;
+  height: auto;
+  perspective: 1000px;
+  min-height: 400px;
+}
+
+/* Cartões */
+
+.portfolio-card {
+  position: absolute;  
+  left: 190%;
+  top: 0;
+  transform: translateX(-50%) scale(0.8);
+  width: 100%;
+  background-color: #0c0c12;
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #00b3ff, #9b00ff) 1;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 0 12px rgba(155, 0, 255, 0.08);
+  text-align: center;
+  opacity: 0;
+  filter: blur(4px);
+  transition: all 0.6s ease;
+  z-index: 0;
+}
+
+.portfolio-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background-color: #111;
+  object-fit: contain;
+}
+
+.portfolio-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Tags */
+
+.portfolio-tags {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.portfolio-tags span {
+  background: #9b00ff22;
+  color: #c46dff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Estados do carrossel */
+
+.portfolio-card.active {
+  opacity: 1;
+  filter: none;
+  transform: translateX(-50%) scale(1);
+  z-index: 3;
+}
+
+.portfolio-card.left-blur {
+  transform: translateX(-170%) scale(0.85);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.portfolio-card.right-blur {
+  transform: translateX(70%) scale(0.85);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* SECTION: Contato */
+
+.contact-section {
+  background: linear-gradient(to bottom, #030b1c, #000000);
+  padding: 6rem 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-header {
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title.gradient-text {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #00b3ff, #9b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+}
+
+.section-subtitle {
+  color: #ccc;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Card Container */
+
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 960px;
+  margin: 0 auto;
+  background: #0c0c12;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(155, 0, 255, 0.1);
+}
+
+/* Informações de Contato */
+
+.contact-info {
+  flex: 1;
+  min-width: 260px;
+  max-width: 300px;
+  text-align: left;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.contact-info li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.contact-info i {
+  color: #9b00ff;
+  font-size: 1.2rem;
+}
+
+/* Botões de Contato */
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-btn {
+  display: inline-block;
+  text-align: center;
+  background: linear-gradient(to right, #00b3ff, #9b00ff);
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+  font-weight: 500;
+}
+
+.contact-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Formulário */
+
+.contact-form {
+  flex: 2;
+  min-width: 300px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.contact-form label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  background: #12121a;
+  border: 1px solid #2a2a3d;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
+}
+
+.submit-btn {
+  background: linear-gradient(to right, #00b3ff, #9b00ff);
+  color: white;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.1);
+}
+
+.footer {
+  background: linear-gradient(to right, #0b0b13, #08080d);
+  padding: 3rem 2rem 2rem;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+  border-bottom: 1px solid #1e1e28;
+  padding-bottom: 2rem;
+}
+
+.footer-brand h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  color: #aaa;
+  font-size: 0.95rem;
+  max-width: 300px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-dashboard .dashboard-btn {
+  display: inline-block;
+  padding: 0.75rem 1.2rem;
+  background: linear-gradient(135deg, #00b3ff, #9b00ff);
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-dashboard .dashboard-btn:hover {
+  transform: scale(1.05);
+}
+
+.footer-dashboard i {
+  margin-right: 0.5rem;
+}
+

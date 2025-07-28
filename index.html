@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="code.js">
+
+    <title>Document</title>
+  <header class="main-header">
+    <div class="container">
+      <h1 class="logo">WardsUp</h1>
+      <nav class="nav-menu">
+        <a href="#intro">Início</a>
+        <a href="#services">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contact">Contato</a>
+      </nav>
+    </div>
+  </header>
+ <section class="hero" id="intro">
+    <div class="hero-content">
+      <h2 class="hero-title">
+        Transformamos <span class="gradient-text">Ideias</span><br />
+        em <span class="gradient-text">Soluções Digitais</span>
+      </h2>
+      <p class="hero-subtitle">
+        Desenvolvimento completo de sistemas web e mobile, dashboards administrativos e integrações que impulsionam seu negócio para o futuro digital.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn filled">Solicitar Orçamento</a>
+        <a href="#portfolio" class="btn outlined">Ver Portfólio</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span class="arrow-down">⌄</span>
+    </div>
+  </section>
+<section class="services" id="services">
+  <div class="services-header">
+    <h2 class="section-title gradient-text">Nossas Soluções</h2>
+    <p class="section-subtitle">
+      Oferecemos um ecossistema completo de desenvolvimento digital para empresas que buscam inovação e resultados.
+    </p>
+  </div>
+  <div class="services-cards">
+    <div class="service-card">
+  <i class="fas fa-code"></i>
+  <h3>Front-end</h3>
+  <p>Construímos interfaces modernas, responsivas e acessíveis com foco na experiência do usuário.</p>
+</div>
+
+<div class="service-card">
+  <i class="fas fa-server"></i>
+  <h3>Back-end</h3>
+  <p>Estruturamos a lógica e os dados com APIs robustas, bancos de dados e segurança em mente.</p>
+</div>
+
+<div class="service-card">
+  <i class="fas fa-chart-line"></i>
+  <h3>Dashboards</h3>
+  <p>Desenvolvemos painéis administrativos com métricas e visualizações em tempo real.</p>
+</div>
+
+<div class="service-card">
+  <i class="fas fa-pencil-ruler"></i>
+  <h3>UX/UI Design</h3>
+  <p>Projetamos experiências intuitivas e layouts atraentes que conectam marca e usuário.</p>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-header">
+    <h2 class="section-title gradient-text">Portfólio</h2>
+    <p class="section-subtitle">
+      Projetos desenvolvidos para empresas que confiaram em nossa visão digital.
+    </p>
+  </div>
+
+    <div class="portfolio-carousel-3d">
+        <div class="portfolio-card">
+        <img src="empresa1-logo.png" alt="Dashboard">
+        <p>Sistema completo para gestão de funcionarios</p>
+        <div class="portfolio-tags">
+          <span>#Front-end</span><span>#Dashboard</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <img src="Psicologa.avif" alt="Empresa 2">
+        <p>Site Portifolio Para Psicologa</p>
+        <div class="portfolio-tags">
+          <span>#UI Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <a href="">
+        <img src="Lost.png" alt="Empresa 3">
+        </a>
+        <p>Landing page Para Servidor de Minecraft</p>
+        <div class="portfolio-tags">
+          <span>#LandingPage</span><span>#Minecraft</span>
+        </div>
+      </div>
+    </div>
+
+  <script src="code.js"></script>
+</section>
+<section class="contact-section" id="contact">
+  <div class="contact-header">
+    <h2 class="section-title gradient-text">Vamos conversar?</h2>
+    <p class="section-subtitle">Transforme sua ideia em realidade digital. Entre em contato conosco!</p>
+  </div>
+
+  <div class="contact-card">
+    <!-- Infos de Contato -->
+    <div class="contact-info">
+      <ul>
+        <li><i class="fas fa-envelope"></i> contato@wardsup.com</li>
+        <li><i class="fas fa-phone-alt"></i> +55 (11) 99999-9999</li>
+        <li><i class="fab fa-whatsapp"></i> WhatsApp Business</li>
+      </ul>
+
+      <div class="contact-buttons">
+        <a href="mailto:contato@wardsup.com" class="contact-btn">Email</a>
+        <a href="tel:+5511999999999" class="contact-btn">Ligar</a>
+        <a href="https://wa.me/554184842037" target="_blank" class="contact-btn">WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Formulário -->
+    <form class="contact-form" method="POST" action="/enviar-formulario">
+      <label for="nome">Nome *</label>
+      <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="seu@email.com">
+
+      <label for="mensagem">Mensagem *</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Conte-nos sobre seu projeto..."></textarea>
+
+      <button type="submit" class="submit-btn">Enviar Mensagem</button>
+    </form>
+  </div>
+</section>
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2 class="gradient-text">WardsUp</h2>
+        <p>Soluções criativas e digitais para seu negócio evoluir.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#contato">Suporte</a>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Sobre Nós</a>
+      </div>
+
+      <div class="footer-dashboard">
+        <a href="/painel" class="dashboard-btn">
+          <i class="fas fa-lock"></i> Acesso ao Painel de Funcionários
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 WardsUp. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+
+
+
+
+</body>
+</html>
