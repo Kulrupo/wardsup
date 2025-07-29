@@ -179,7 +179,6 @@ body {
   }
 }
 
-/* Restante do CSS permanece como no seu original... */
 
 /* Seção de serviços */
 .services {
@@ -323,6 +322,7 @@ body {
   filter: blur(4px);
   transition: all 0.6s ease;
   z-index: 0;
+  
 }
 
 .portfolio-card img {
@@ -368,13 +368,13 @@ body {
 }
 
 .portfolio-card.left-blur {
-  transform: translateX(-170%) scale(0.85);
+  transform: translateX(-180%) scale(0.85);
   opacity: 0.5;
   z-index: 2;
 }
 
 .portfolio-card.right-blur {
-  transform: translateX(70%) scale(0.85);
+  transform: translateX(80%) scale(0.85);
   opacity: 0.5;
   z-index: 1;
 }
@@ -594,3 +594,48 @@ body {
   margin-right: 0.5rem;
 }
 
+
+.portfolio-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  /* resto igual */
+}
+
+.portfolio-carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* importante para não vazar cards fora da tela */
+}
+
+.portfolio-carousel-3d {
+  position: relative;
+  width: 100%; /* ocupa a largura total da tela */
+  max-width: 1200px; /* opcional para não ficar exagerado */
+  height: auto;
+  perspective: 1000px;
+  min-height: 400px;
+}
+
+.portfolio-card {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) scale(0.8);
+  width: 320px; /* largura real do card */
+  background-color: #0c0c12;
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #00b3ff, #9b00ff) 1;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 0 12px rgba(155, 0, 255, 0.08);
+  text-align: center;
+  opacity: 0;
+  filter: blur(4px);
+  transition: all 0.6s ease;
+  z-index: 0;
+}
