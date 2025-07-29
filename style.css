@@ -1063,3 +1063,10 @@ img, video, iframe {
     text-align: center;
   }
 }
+
+
+@media (max-width: 768px) {
+  .portfolio {
+    display: none;
+  }
+}
