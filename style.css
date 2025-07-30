@@ -290,39 +290,32 @@ body {
 .portfolio-carousel-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center; /* Ensure vertical centering if needed */
   margin-top: 3rem;
   position: relative;
   width: 100%;
+  padding: 0 1rem; /* Add some padding for smaller screens */
+  box-sizing: border-box;
 }
 
 .portfolio-carousel-3d {
   position: relative;
-  width: 320px;
-  height: auto;
-  perspective: 1000px;
+  width: 100%;
+  max-width: 100%; /* or whatever fits your layout */
   min-height: 400px;
+  margin: 0 auto;
+  perspective: 1000px;
 }
 
 /* Cartões */
 
 .portfolio-card {
-  position: absolute;  
-  left: 190%;
+  position: absolute;
   top: 0;
-  transform: translateX(-50%) scale(0.8);
-  width: 100%;
-  background-color: #0c0c12;
-  border: 2px solid transparent;
-  border-image: linear-gradient(135deg, #00b3ff, #9b00ff) 1;
-  border-radius: 16px;
-  padding: 1rem;
-  box-shadow: 0 0 12px rgba(155, 0, 255, 0.08);
-  text-align: center;
-  opacity: 0;
-  filter: blur(4px);
-  transition: all 0.6s ease;
-  z-index: 0;
-  
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .portfolio-card img {
@@ -360,22 +353,21 @@ body {
 
 /* Estados do carrossel */
 
-.portfolio-card.active {
-  opacity: 1;
-  filter: none;
-  transform: translateX(-50%) scale(1);
-  z-index: 3;
-}
-
 .portfolio-card.left-blur {
-  transform: translateX(-180%) scale(0.85);
+  transform: translateX(-200%) scale(0.9);
   opacity: 0.5;
-  z-index: 2;
+  z-index: 0;
 }
 
 .portfolio-card.right-blur {
-  transform: translateX(80%) scale(0.85);
+  transform: translateX(-100%) scale(0.9);
   opacity: 0.5;
+  z-index: 0;
+}
+
+.portfolio-card.active {
+  transform: translateX(100%) scale(1);
+  opacity: 1;
   z-index: 1;
 }
 
@@ -833,80 +825,44 @@ img, video, iframe {
 }
 
 /* ==== SERVICES E PORTFOLIO ==== */
-.services, .portfolio {
-  background: linear-gradient(135deg, #050a12 0%, #0d111a 40%, #0d111a 60%, #050a12 100%);
-  padding: 6rem 2rem;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2.5rem;
-}
-
-.section-subtitle {
-  font-size: 1rem;
-  color: #bbb;
-  margin-top: 0.5rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.services-cards, .portfolio-carousel-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+.portfolio-carousel-wrapper {
+  position: relative; /* para posicionar os cards absolutos dentro */
+  width: 100%;
   max-width: 1200px;
+  height: 360px; /* altura fixa para evitar que o container colapse */
   margin: 3rem auto 0;
-}
-
-.service-card, .portfolio-card {
-  background-color: #0c0c12;
-  border: 2px solid transparent;
-  border-image: linear-gradient(135deg, #00b3ff, #9b00ff) 1;
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  color: #fff;
-  width: 250px;
-  box-shadow: 0 0 20px rgba(155, 0, 255, 0.08);
-  text-align: center;
-  transition: 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.service-card:hover, .portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(155, 0, 255, 0.2);
+  overflow: visible; /* se quiser evitar cortes */
 }
 
 .portfolio-card {
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%) scale(0.8);
+  width: clamp(250px, 25vw, 320px); /* mínimo 250px, máximo 320px, escala com a tela */
+  transform-origin: center center;
   opacity: 0;
   filter: blur(4px);
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+  /* centralizar vertical e horizontalmente */
+  transform: translate(-50%, -50%) scale(0.8);
   z-index: 0;
-  width: 320px;
 }
 
 .portfolio-card.active {
   opacity: 1;
   filter: none;
-  transform: translateX(-50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
   z-index: 3;
 }
 
 .portfolio-card.left-blur {
-  transform: translateX(-180%) scale(0.85);
+  transform: translate(calc(-50% - 150%), -50%) scale(0.8);
   opacity: 0.5;
   z-index: 2;
 }
 
 .portfolio-card.right-blur {
-  transform: translateX(80%) scale(0.85);
+  transform: translate(calc(-50% + 150%), -50%) scale(0.8);
   opacity: 0.5;
   z-index: 1;
 }
