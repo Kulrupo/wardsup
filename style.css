@@ -856,13 +856,13 @@ img, video, iframe {
 }
 
 .portfolio-card.left-blur {
-  transform: translate(calc(-50% - 150%), -50%) scale(0.8);
+  transform: translate(calc(-50% - 120%), -50%) scale(0.8);
   opacity: 0.5;
   z-index: 2;
 }
 
 .portfolio-card.right-blur {
-  transform: translate(calc(-50% + 150%), -50%) scale(0.8);
+  transform: translate(calc(-50% + 120%), -50%) scale(0.8);
   opacity: 0.5;
   z-index: 1;
 }
