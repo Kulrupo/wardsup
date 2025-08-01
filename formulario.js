@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-  emailjs.init('XiMT-3D48_4wG57j2');
+
 
   const btn = document.querySelector('.submit-btn');
   const form = document.getElementById('form-contato');
@@ -34,4 +33,3 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Erro ao enviar: ' + JSON.stringify(err));
       });
   });
-});
