@@ -1,4 +1,5 @@
- emailjs.init('XiMT-3D48_4wG57j2');
+document.addEventListener('DOMContentLoaded', () => {
+  emailjs.init('XiMT-3D48_4wG57j2');
 
   const btn = document.querySelector('.submit-btn');
   const form = document.getElementById('form-contato');
@@ -13,6 +14,7 @@
     }
 
     btn.textContent = 'Enviando...';
+    btn.disabled = true;
 
     const serviceID = 'service_kjl9b4w';
     const templateID = 'template_1etufi4';
@@ -28,6 +30,8 @@
         grecaptcha.reset();
       }, (err) => {
         btn.textContent = 'Enviar Mensagem';
+        btn.disabled = false;
         alert('Erro ao enviar: ' + JSON.stringify(err));
       });
   });
+});
