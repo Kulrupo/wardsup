@@ -1,5 +1,4 @@
-
-
+document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector('.submit-btn');
   const form = document.getElementById('form-contato');
 
@@ -33,3 +32,4 @@
         alert('Erro ao enviar: ' + JSON.stringify(err));
       });
   });
+});
