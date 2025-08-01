@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="code.js">
+  <link rel="stylesheet" href="formulario.js">
 
     <title>Document</title>
   <header class="main-header">
@@ -145,6 +146,7 @@
 <div class="g-recaptcha" data-sitekey="6LfzepcrAAAAAIxrcq72S2DR-vJ971u_Ex7d7Kwv"></div>
   <button type="submit" class="submit-btn">Enviar Mensagem</button>
 </form>
+<script src="formulario.js"></script>
   </div>
 </section>
 <footer class="footer">
@@ -173,32 +175,7 @@
     </div>
   </footer>
 
-  <script>
-  document.getElementById('form-contato').addEventListener('submit', async (e) => {
-    e.preventDefault();
 
-    const formData = {
-      nome: document.getElementById('nome').value,
-      email: document.getElementById('email').value,
-      mensagem: document.getElementById('mensagem').value
-    };
-
-    try {
-      const resposta = await fetch('http://localhost:3000/enviar-formulario', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      const texto = await resposta.text();
-      alert(texto);
-    } catch (erro) {
-      alert('Erro ao enviar mensagem. Tente novamente.');
-    }
-  });
-</script>
 
 
 
