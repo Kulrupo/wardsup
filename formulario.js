@@ -1,5 +1,6 @@
+ emailjs.init('XiMT-3D48_4wG57j2');
 
-const btn = document.querySelector('.submit-btn');
+  const btn = document.querySelector('.submit-btn');
   const form = document.getElementById('form-contato');
 
   form.addEventListener('submit', function(event) {
