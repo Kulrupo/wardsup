@@ -133,18 +133,18 @@
     </div>
 
     <!-- Formulário -->
-    <form class="contact-form" method="POST" action="/enviar-formulario">
-      <label for="nome">Nome *</label>
-      <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+    <form class="contact-form" id="form-contato">
+  <label for="nome">Nome *</label>
+  <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
 
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" required placeholder="seu@email.com">
+  <label for="email">Email *</label>
+  <input type="email" id="email" name="email" required placeholder="seu@email.com">
 
-      <label for="mensagem">Mensagem *</label>
-      <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Conte-nos sobre seu projeto..."></textarea>
-
-      <button type="submit" class="submit-btn">Enviar Mensagem</button>
-    </form>
+  <label for="mensagem">Mensagem *</label>
+  <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Conte-nos sobre seu projeto..."></textarea>
+<div class="g-recaptcha" data-sitekey="6LfzepcrAAAAAIxrcq72S2DR-vJ971u_Ex7d7Kwv"></div>
+  <button type="submit" class="submit-btn">Enviar Mensagem</button>
+</form>
   </div>
 </section>
 <footer class="footer">
@@ -172,6 +172,33 @@
       <p>&copy; 2025 WardsUp. Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <script>
+  document.getElementById('form-contato').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      nome: document.getElementById('nome').value,
+      email: document.getElementById('email').value,
+      mensagem: document.getElementById('mensagem').value
+    };
+
+    try {
+      const resposta = await fetch('http://localhost:3000/enviar-formulario', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const texto = await resposta.text();
+      alert(texto);
+    } catch (erro) {
+      alert('Erro ao enviar mensagem. Tente novamente.');
+    }
+  });
+</script>
 
 
 

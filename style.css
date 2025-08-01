@@ -1019,3 +1019,19 @@ img, video, iframe {
     text-align: center;
   }
 }
+
+.contact-success {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-title {
+  color: #00ffcc;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  color: #ccc;
+  font-size: 1rem;
+}
