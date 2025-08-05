@@ -607,6 +607,12 @@ body {
   font-size: 0.95rem;
 }
 
+.footer-bottom{
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
 .footer-content {
   display: flex;
   flex-wrap: wrap;
