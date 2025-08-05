@@ -221,7 +221,7 @@ body {
   border-image: linear-gradient(135deg, #00b3ff, #9b00ff) 1;
   padding: 2rem 1.5rem;
   border-radius: 20px;
-  color: #fff;
+  color: #bbb;
   width: 250px; /* largura fixa que permite layout horizontal */
   box-shadow: 0 0 20px rgba(155, 0, 255, 0.08);
   transition: box-shadow 0.3s, transform 0.3s;
@@ -230,6 +230,84 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+
+
+.about-section {
+  background: linear-gradient(135deg, #050a12 0%, #0d111a 40%, #0d111a 60%, #050a12 100%);
+  padding: 6rem 2rem;
+  color: #fff;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Título à esquerda */
+
+.about-title img {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.about-title {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centraliza horizontalmente */
+  justify-content: center;
+  text-align: center;
+}
+
+.about-title h2 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #00b3ff, #9b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  margin-bottom: 1rem;
+}
+
+/* Card com conteúdo */
+.Sobre-card {
+  flex: 2;
+  background-color: #0c0c12;
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #00b3ff, #9b00ff) 1;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  color: #fff;
+  height: 350px;
+  box-shadow: 0 0 20px rgba(155, 0, 255, 0.08);
+  transition: box-shadow 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  text-align: center;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.Sobre-card p {
+  margin: 0;
+  padding: 0 2rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+
 
 .service-card i {
   font-size: 2.5rem;
@@ -317,6 +395,9 @@ body {
   width: 300px;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
+
+
+
 
 .portfolio-card img {
   width: 100%;
@@ -1035,3 +1116,65 @@ img, video, iframe {
   color: #ccc;
   font-size: 1rem;
 }
+
+.about-section {
+  background: linear-gradient(135deg, #050a12 0%, #0d111a 40%, #0d111a 60%, #050a12 100%);
+  padding: 6rem 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+}
+
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1 1 300px;
+  max-width: 320px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(155, 0, 255, 0.2);
+}
+
+.about-card h3 {
+  color: #00b3ff;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.about-card p {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
